@@ -1,0 +1,22 @@
+identity:
+  name: check_domain
+  author: veilleio
+  label:
+    en_US: Check Domain
+description:
+  human:
+    en_US: 'Check a domain: DNS and mail setup, mail providers, WHOIS dates and registrar, domain age, disposable or relay domain. Uses 2 credits.'
+  llm: Checks a domain name and returns its MX, SPF and DMARC records and mail providers, WHOIS registrar and dates, domain age in days, and whether it is disposable, a relay service or public webmail.
+parameters:
+- name: domain
+  type: string
+  required: true
+  label:
+    en_US: Domain
+  human_description:
+    en_US: The domain name, for example example.com.
+  llm_description: The domain name, for example example.com.
+  form: llm
+extra:
+  python:
+    source: tools/check_domain.py

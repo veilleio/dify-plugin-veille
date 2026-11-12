@@ -1,0 +1,22 @@
+identity:
+  name: qualify_email
+  author: veilleio
+  label:
+    en_US: Qualify Email
+description:
+  human:
+    en_US: 'Deep email check: everything Check Email returns, plus an SMTP check that the inbox exists, catch-all detection and a verdict. Uses 5 credits.'
+  llm: 'Deep email verification: the Check Email signals plus smtp_valid (the mail server confirmed the inbox), catch-all detection and a qualification verdict (valid, invalid, risky, disposable or unknown). Use it before an important send.'
+parameters:
+- name: email
+  type: string
+  required: true
+  label:
+    en_US: Email
+  human_description:
+    en_US: The email address to qualify.
+  llm_description: The email address to qualify.
+  form: llm
+extra:
+  python:
+    source: tools/qualify_email.py

@@ -1,0 +1,31 @@
+identity:
+  name: exchange_rates
+  author: veilleio
+  label:
+    en_US: Exchange Rates
+description:
+  human:
+    en_US: Today's European Central Bank exchange rates for a base currency (EUR by default). Uses 1 credit.
+  llm: Returns today's European Central Bank exchange rates for a base currency (EUR by default), optionally only for some target currencies. Use it to convert amounts between currencies.
+parameters:
+- name: base
+  type: string
+  required: false
+  label:
+    en_US: Base Currency
+  human_description:
+    en_US: ISO 4217 code of the base currency, for example EUR (default), USD or GBP.
+  llm_description: ISO 4217 code of the base currency, for example EUR (default), USD or GBP.
+  form: llm
+- name: symbols
+  type: string
+  required: false
+  label:
+    en_US: Currencies
+  human_description:
+    en_US: Comma-separated target currencies, for example USD,GBP,JPY. All currencies when empty.
+  llm_description: Comma-separated target currencies, for example USD,GBP,JPY. All currencies when empty.
+  form: llm
+extra:
+  python:
+    source: tools/exchange_rates.py

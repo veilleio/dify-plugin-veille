@@ -1,0 +1,22 @@
+identity:
+  name: check_ip
+  author: veilleio
+  label:
+    en_US: Check IP
+description:
+  human:
+    en_US: 'Check an IP address: location, network owner, and whether it is a VPN, proxy, Tor exit node, data center or known abuser, with a threat score. Uses 2 credits.'
+  llm: Checks an IP address and returns its location, network owner (ASN), whether it is a VPN, proxy, Tor exit node, data center, mobile network, crawler or known abuser, and a 0-100 threat score. Use it to spot risky sign-ups, orders or logins.
+parameters:
+- name: ip
+  type: string
+  required: true
+  label:
+    en_US: IP Address
+  human_description:
+    en_US: The IPv4 or IPv6 address to check.
+  llm_description: The IPv4 or IPv6 address to check.
+  form: llm
+extra:
+  python:
+    source: tools/check_ip.py

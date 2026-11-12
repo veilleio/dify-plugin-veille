@@ -1,0 +1,35 @@
+version: 0.0.1
+type: plugin
+author: veilleio
+name: veille
+label:
+  en_US: Veille
+description:
+  en_US: 'Fraud and validity checks from Veille: emails (with an SMTP inbox check), domains, IP addresses (VPN, proxy, Tor), phone numbers, EU VAT numbers and IBANs, plus daily ECB exchange rates.'
+icon: icon.svg
+created_at: '2026-11-12T00:00:00Z'
+privacy: PRIVACY.md
+repo: https://github.com/veilleio/dify-plugin-veille
+contact: contact@veille.io
+resource:
+  memory: 268435456
+  permission: {}
+plugins:
+  tools:
+  - provider/veille.yaml
+meta:
+  version: 0.0.1
+  minimum_dify_version: 1.0.0
+  arch:
+  - amd64
+  - arm64
+  runner:
+    language: python
+    version: '3.12'
+    entrypoint: main
+tags:
+- business
+- utilities
+network:
+  domains:
+  - api.veille.io

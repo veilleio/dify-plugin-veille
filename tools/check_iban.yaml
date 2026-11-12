@@ -1,0 +1,22 @@
+identity:
+  name: check_iban
+  author: veilleio
+  label:
+    en_US: Check IBAN
+description:
+  human:
+    en_US: Validate an IBAN and get its country, bank name, BIC and whether it is in the SEPA zone. Uses 1 credit.
+  llm: Validates an IBAN and returns whether it is valid, its country, bank name, BIC, bank and branch codes, and whether it is in the SEPA zone.
+parameters:
+- name: iban
+  type: string
+  required: true
+  label:
+    en_US: IBAN
+  human_description:
+    en_US: The IBAN to validate.
+  llm_description: The IBAN to validate.
+  form: llm
+extra:
+  python:
+    source: tools/check_iban.py

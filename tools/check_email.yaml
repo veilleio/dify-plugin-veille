@@ -1,0 +1,22 @@
+identity:
+  name: check_email
+  author: veilleio
+  label:
+    en_US: Check Email
+description:
+  human:
+    en_US: 'Check an email address: syntax, MX, SPF and DMARC records, disposable or temporary provider, role account, alias, typo suggestion and a 0-100 risk score. Uses 3 credits.'
+  llm: 'Checks an email address and returns its risk score (0-100) and signals: disposable provider, role account (contact@, sales@), alias, public webmail, typo suggestion (did_you_mean), MX, SPF and DMARC records. Use it to decide whether to accept a sign-up or an address.'
+parameters:
+- name: email
+  type: string
+  required: true
+  label:
+    en_US: Email
+  human_description:
+    en_US: The email address to check.
+  llm_description: The email address to check.
+  form: llm
+extra:
+  python:
+    source: tools/check_email.py

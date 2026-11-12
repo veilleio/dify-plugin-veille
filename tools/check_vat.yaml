@@ -1,0 +1,22 @@
+identity:
+  name: check_vat
+  author: veilleio
+  label:
+    en_US: Check VAT Number
+description:
+  human:
+    en_US: Validate a European VAT number in the EU VIES database and get the company name and address registered under it. Uses 1 credit.
+  llm: Validates a European VAT number (with its country prefix) in the EU VIES database and returns whether it is valid, and the registered company name and address.
+parameters:
+- name: vat_number
+  type: string
+  required: true
+  label:
+    en_US: VAT Number
+  human_description:
+    en_US: The EU VAT number with its country prefix, for example FR40303265045.
+  llm_description: The EU VAT number with its country prefix, for example FR40303265045.
+  form: llm
+extra:
+  python:
+    source: tools/check_vat.py
